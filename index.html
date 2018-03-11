@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Feathers Basics</title>
+    <link rel="stylesheet" href="/node_modules/bulma/css/bulma.css">
+    <link rel="stylesheet" href="CSS/accueil.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <section class="hero is-dark is-medium">
+            <!-- Hero head: will stick at the top -->
+            <div class="hero-head">
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar-brand">
+                            <a class="navbar-item">
+                                <!-- <img src="medias/bulma-type-white.png" alt="Logo"> -->
+                                <span class="header-title">Exrtranet</span>
+                            </a>
+                            <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+                        <div id="navbarMenuHeroA" class="navbar-menu">
+                            <div class="navbar-end">
+                                <a class="navbar-item is-active">
+                                    Maths
+                                </a>
+                                <a class="navbar-item">
+                                    Examples
+                                </a>
+                                <a class="navbar-item">
+                                    Documentation
+                                </a>
+                                <span class="navbar-item">
+                                    <a class="button is-dark is-inverted">
+                                        <span class="icon">
+                                            <i class="fas fa-user"></i>
+                                        </span>
+                                        <span>Se connecter</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">
+                    Hello World
+                </h1>
+                <p class="subtitle">
+                    My first website with
+                    <strong>Bulma</strong>!
+                </p>
+                <p>{{ message }}</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="JS/vue.js"></script>
+    <script type="text/javascript" src="//unpkg.com/@feathersjs/client@^3.0.0/dist/feathers.js"></script>
+    <script src="JS/client.js"></script>
+</body>
+
+</html>
