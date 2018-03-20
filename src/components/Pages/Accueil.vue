@@ -1,6 +1,9 @@
 <template>
 <div>
   <MenuBar></MenuBar>
+  <transition name="slide-fade">
+    <notification v-if="NotificationState"></notification>
+  </transition>
     <div class="container">
       <div class="row">
         <div class="col-12" style="margin-bottom: 30px;">
@@ -13,8 +16,8 @@
           <second-title>Bienvenue sur EXTRANET</second-title>
           <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti aliquid nobis sed magni necessitatibus eaque labore et accusantium quod dicta optio nihil pariatur voluptatem tempora, cupiditate fugit ratione libero? Sint!</div>
           <router-link :to="{name: 'login'}"><button class="btn btn-primary connect-button">Se connecter</button></router-link>
+          <button class="btn btn-primary connect-button" @click="displayNotification">Display Notification</button>
         </div>
-
       </div>
     </div>
 </div>
@@ -24,11 +27,26 @@
 import MenuBar from '@/components/Elements/Menu'
 import FirstTitle from '@/components/Elements/FirstTitle'
 import SecondTitle from '@/components/Elements/SecondTitle'
+import Notification from '@/components/Elements/Notification'
 export default {
+  data () {
+    return {
+      NotificationState: false
+    }
+  },
   components: {
     MenuBar,
     FirstTitle,
-    SecondTitle
+    SecondTitle,
+    Notification
+  },
+  methods: {
+    displayNotification () {
+      this.NotificationState = !this.NotificationState
+      if (this.NotificationState === true) {
+        window.setTimeout(this.displayNotification, 1500)
+      }
+    }
   }
 }
 </script>
@@ -46,5 +64,18 @@ export default {
   margin-top: 40px;
   background-color: #78ADE6;
   border-color: #78ADE6;
+}
+
+.slide-fade-enter-active {
+  transition: all .4s ease;
+}
+
+.slide-fade-leave-active {
+  transition: all .4s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
 }
 </style>
