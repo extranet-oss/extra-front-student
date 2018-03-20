@@ -2,7 +2,7 @@
   <div>
     <menu-bar></menu-bar>
     <div class="container">
-      <first-title>Page B</first-title>
+      <first-title subtitle="Ceci est un sous titre">PAGE B</first-title>
       ceci est un test
     </div>
   </div>

@@ -42,5 +42,7 @@ border: 1px solid #CCCECF;
 border-radius: 4px;
 margin-left: 15px;
 padding: 7px 20px 7px 20px!important;
+width: 140px;
+text-align: center;
 }
 </style>

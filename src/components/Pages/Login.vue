@@ -19,7 +19,8 @@
               <label class="form-check-label" for="exampleCheck1">Se souvenir de moi</label>
             </div>
             <button type="submit" class="btn btn-primary connect-button">Se connecter</button>
-          </form></center>
+          </form>
+          <div class="office-connect"><img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Office_365_logo.png" style="width: 100%;"></div></center>
         </div>
 
         <div class="col-10 col-sm-10 col-md-10 col-lg-8 col-xl-8" id="right-side">
@@ -58,7 +59,7 @@ html,body {
 }
 
 #right-side{
-  background-image: url("../../assets/login.jpeg"); ;
+  background-image: url("../../assets/login.jpg"); ;
   background-size: cover;
 }
 
@@ -85,6 +86,11 @@ html,body {
 
 .form-check{
   margin-top: 30px;
+}
+
+.office-connect{
+  margin-top: 50px;
+  width: 258px;
 }
 
 label{

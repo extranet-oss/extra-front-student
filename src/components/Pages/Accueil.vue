@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-12" style="margin-bottom: 30px;">
-          <first-title>Bienvenue sur EXTRANET</first-title>
+          <first-title subtitle="Ceci est un sous titre">Bienvenue sur EXTRANET</first-title>
         </div>
         <div class="col-md-6">
           <img src="http://prod.timotheduc.com/wp-content/uploads/2018/03/Wiicontrol-1.jpg" class="presentation-picture">
@@ -12,8 +12,7 @@
         <div class="col-md-6">
           <second-title>Bienvenue sur EXTRANET</second-title>
           <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti aliquid nobis sed magni necessitatibus eaque labore et accusantium quod dicta optio nihil pariatur voluptatem tempora, cupiditate fugit ratione libero? Sint!</div>
-          <button class="btn btn-primary connect-button">Se connecter</button>
-
+          <router-link :to="{name: 'login'}"><button class="btn btn-primary connect-button">Se connecter</button></router-link>
         </div>
 
       </div>
