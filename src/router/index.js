@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Accueil from '@/components/Pages/accueil'
+import Accueil from '@/components/Pages/Accueil'
 import pageB from '@/components/Pages/pageB'
 import menuBar from '@/components/Elements/Menu'
 import profil from '@/components/Pages/Profil'
