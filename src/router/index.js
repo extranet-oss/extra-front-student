@@ -1,36 +1,39 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import Accueil from '@/components/Pages/Accueil'
-import pageB from '@/components/Pages/pageB'
-import menuBar from '@/components/Elements/Menu'
-import profil from '@/components/Pages/Profil'
-import login from '@/components/Pages/Login'
+import VueRouter from 'vue-router'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
-  mode: 'history',
-  routes: [
+const routes = [
     {
-      path: '/',
-      name: 'accueil',
-      component: Accueil
-    }, {
-      path: '/pageb',
-      name: 'pageB',
-      component: pageB
-    }, {
-      path: '/menu',
-      name: 'menuBar',
-      component: menuBar
-    }, {
-      path: '/profil',
-      name: 'profil',
-      component: profil
-    }, {
-      path: '/login',
-      name: 'login',
-      component: login
+        path: '/',
+        name: 'home',
+        component: () => import('@/components/Home')
+    },
+    {
+        path: '/dashboard',
+        name: 'dashboard',
+        component: () => import('@/components/Dashboard/Layout'),
+        children: [
+            {
+                path: 'indicators',
+                name: 'dashboard.indicators',
+                component: () => import('@/components/Dashboard/Indicators')
+            },
+            {
+                path: 'backup',
+                name: 'dashboard.backup',
+                component: () => import('@/components/Dashboard/Backup')
+            },
+            {
+                path: 'logs',
+                name: 'dashboard.logs',
+                component: () => import('@/components/Dashboard/Logs')
+            }
+        ]
     }
-  ]
+]
+
+export default new VueRouter({
+    mode: 'history',
+    routes
 })

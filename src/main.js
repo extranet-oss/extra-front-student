@@ -3,16 +3,17 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import VueResource from 'vue-resource'
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css'
+
+Vue.use(Vuetify)
 
 Vue.config.productionTip = false
-Vue.use(VueResource)
-Vue.http.options.root = 'https://jsonplaceholder.typicode.com/'
 
 /* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  components: { App },
-  template: '<App/>'
+    el: '#app',
+    router,
+    components: {App},
+    template: '<App/>'
 })

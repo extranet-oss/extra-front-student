@@ -1,19 +1,23 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+    <component :is="component">
+        <slot />
+    </component>
 </template>
 
 <script>
-require('../node_modules/bootstrap/dist/css/bootstrap.min.css')
-export default {
-  name: 'App'
-}
-</script>
+    import VuebaseLayout from './layouts/VuebaseLayout'
 
-<style>
-body {
-  background-color: #212121;
-  color: white;
-}
-</style>
+    export default {
+        name: 'App',
+
+        components: {
+            VuebaseLayout
+        },
+
+        computed: {
+            component () {
+                return VuebaseLayout
+            }
+        }
+    }
+</script>
